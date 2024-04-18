@@ -219,6 +219,10 @@
       <div class="templeft-icon-view-box"><img class="templeft-icon" src="../icons/contact-chatting-communication-svgrepo-com.svg" /></div>
       <div class="temptext-box"><div class="temptext">DSA</div></div>
     </button>
+    <button id="visuxButton" class="tempsize-large-icononly">
+      <div class="templeft-icon-view-box"><img class="templeft-icon" src="../icons/contact-chatting-communication-svgrepo-com.svg" /></div>
+      <div class="temptext-box"><div class="temptext">VisuX</div></div>
+    </button>
     <button id="sportButton" class="tempsize-large-icononly">
       <div class="templeft-icon-view-box"><img class="templeft-icon" src="../icons/sport-faculty-svgrepo-com.svg" /></div>
       <div class="temptext-box"><div class="temptext">Sport</div></div>
@@ -280,6 +284,14 @@
   
     <script>
       // Get the button element by its ID
+      const visuxButton = document.getElementById('visuxButton');
+  
+      // Add a click event listener to the button
+      visuxButton.addEventListener('click', function() {
+        // Redirect to the specified URL
+        window.location.href = './Menu/visux.html';
+      });
+        // Get the button element by its ID
       const oricButton = document.getElementById('oricButton');
   
       // Add a click event listener to the button
