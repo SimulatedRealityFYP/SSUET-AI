@@ -143,10 +143,10 @@
         .chat-input textarea:valid ~ span {
           visibility: visible;
         }
-        @media (max-width: 490px) {
+        @media (max-width: 767px) {
           .chatbot-toggler {
             right: 20px;
-            bottom: 20px;
+            bottom: 45px;
             z-index: 9999!important;
           }
           .chatbot {
@@ -156,31 +156,17 @@
             border-radius: 0;
             width: 100%;
           }
-          .chatbot .chatbox {
-            height: 90%;
-            padding: 25px 15px 100px;
-          }
-          .chatbot .chat-input {
-            padding: 5px 15px;
-          }
-          .chatbot header span {
-            display: block;
-          }
-          .chatbot_iframe{
-            height: 98vh!important;
-            margin-top: -83px !important;
-            width: 130% !important;
-            margin-left: -34px!important;
-          }
           .side_padding{
-            height: 483px!important;
-            z-index: 1499!important;
-            margin-top: -16px!important;
-          }
+          position: fixed;left: 0;background-color: #f7f7f8;z-index: 1499;
+        }
+        }
+        iframe{
+          width: 100vw;
+          height: 100vh;
         }
         
         .side_padding{
-          position: fixed;left: 0;padding: 15px;background-color: #f7f7f8;height: 426px;z-index: 1499;margin-top: 0px;
+          position: fixed;left: 0;background-color: #f7f7f8;z-index: 1499;padding: 25px;height: 536px;margin-top: 0px;
         }
         
         button {
