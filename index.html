@@ -342,6 +342,10 @@
       menu_side_padding.addEventListener('click', function() {
       sidePadding.classList.remove('side_padding');
     });
+      const general_side_padding = document.getElementById('generalButton');
+      general_side_padding.addEventListener('click', function() {
+      sidePadding.classList.add('side_padding');
+    });
     // Get the button element by its ID
               const menubutton = document.getElementById('menuButton');
               const iframe = document.getElementById('menuFrame');
