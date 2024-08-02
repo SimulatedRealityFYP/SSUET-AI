@@ -337,6 +337,11 @@
       </div> -->
     </div>
     <script>
+      const menu_side_padding = document.getElementById('menuButton');
+      const sidePadding = document.querySelector('.side_padding');
+      menu_side_padding.addEventListener('click', function() {
+      sidePadding.classList.remove('side_padding');
+    });
     // Get the button element by its ID
               const menubutton = document.getElementById('menuButton');
               const iframe = document.getElementById('menuFrame');
