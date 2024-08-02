@@ -275,7 +275,7 @@
         <div class="templeft-icon-view-box"><img class="templeft-icon" src="../icons/contact-phone-talking-svgrepo-com.svg" /></div>
         <div class="temptext-box"><div class="temptext">Support</div></div>
       </button>
-    <button id="careerButton" class="glow-on-hover" type="button">Career Guidance!</button>
+    <button id="careerButton resetButton" class="glow-on-hover" type="button">Career Guidance!</button>
     <!-- <button id="careerButton" class="size-large-icononly">
       <div class="left-icon-view-box"><img class="left-icon" src="annual-report-1.svg" /></div>
       <div class="text-box"><div class="text">careerButton</div></div>
@@ -283,8 +283,12 @@
   </div>
   
     <script>
-        
-  
+        const resetButton = document.getElementById('resetButton');
+
+    resetButton.addEventListener('click', function() {
+      // Send a message to the parent document
+      window.parent.postMessage('resetOpacity', '*');
+    });
       // Add a click event listener to the button
       visuxButton.addEventListener('click', function() {
         // Redirect to the specified URL
