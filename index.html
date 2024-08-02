@@ -339,24 +339,13 @@
       </div> -->
     </div>
     <script>
-      const menu_side_padding = document.getElementById('menuButton');
-    const sidePadding = document.querySelector('.side_padding');
-
-    menu_side_padding.addEventListener('click', function() {
-      sidePadding.style.opacity = '0';
-    });
-
-    // Function to set opacity back to 1
-    function setOpacityTo1() {
-      sidePadding.style.opacity = '1';
-    }
-
-    // Listen for messages from the iframe
-    window.addEventListener('message', function(event) {
-      if (event.data === 'resetOpacity') {
-        setOpacityTo1();
-      }
-    });
+window.addEventListener('message', function(event) {
+            if (event.data === 'removeWhiteStrip') {
+                document.querySelector('.side_padding').style.opacity = 0;
+            } else if (event.data === 'restoreWhiteStrip') {
+                document.querySelector('.side_padding').style.opacity = 1;
+            }
+        });
     // Get the button element by its ID
               const menubutton = document.getElementById('menuButton');
               const iframe = document.getElementById('menuFrame');
