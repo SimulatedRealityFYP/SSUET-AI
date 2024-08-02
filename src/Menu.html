@@ -211,7 +211,7 @@
 }
   </style>
   <div class="buttonContainer">
-    <button id="generalButton" class="tempsize-large-icononly" style="width:100%;background-color: rgb(32 15 45); padding: 10px 19px;">
+    <button id="generalButton restoreWhiteStrip" class="tempsize-large-icononly" style="width:100%;background-color: rgb(32 15 45); padding: 10px 19px;">
       <div class="templeft-icon-view-box"><img class="templeft-icon" src="../icons/help-desk-information-counter-svgrepo-com.svg" /></div>
       <div class="temptext-box"><div class="temptext">General</div></div>
     </button>
@@ -275,7 +275,7 @@
         <div class="templeft-icon-view-box"><img class="templeft-icon" src="../icons/contact-phone-talking-svgrepo-com.svg" /></div>
         <div class="temptext-box"><div class="temptext">Support</div></div>
       </button>
-    <button id="careerButton resetButton" class="glow-on-hover" type="button">Career Guidance!</button>
+    <button id="careerButton removeWhiteStrip" class="glow-on-hover" type="button">Career Guidance!</button>
     <!-- <button id="careerButton" class="size-large-icononly">
       <div class="left-icon-view-box"><img class="left-icon" src="annual-report-1.svg" /></div>
       <div class="text-box"><div class="text">careerButton</div></div>
@@ -283,12 +283,13 @@
   </div>
   
     <script>
-        const resetButton = document.getElementById('resetButton');
+        document.getElementById('specialButton').addEventListener('click', function() {
+            window.parent.postMessage('removeWhiteStrip', '*');
+        });
 
-    resetButton.addEventListener('click', function() {
-      // Send a message to the parent document
-      window.parent.postMessage('resetOpacity', '*');
-    });
+        document.getElementById('restoreButton').addEventListener('click', function() {
+            window.parent.postMessage('restoreWhiteStrip', '*');
+        });
       // Add a click event listener to the button
       visuxButton.addEventListener('click', function() {
         // Redirect to the specified URL
