@@ -4,10 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body{
+        margin:0px;
+        padding:0px;
+        overflow:hidden;
+    }
+
+    iframe{
+        overflow:hidden;overflow-x:hidden;overflow-y:hidden;/*height:119vh;width:108vw;*/width: 100vw;height: 100vh;position:absolute;top:0px;left:0px;right:0px;bottom:0px;/*margin-top:-3.1rem;*/margin-top: -50px;margin-right:0px;margin-left:0px;
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+        iframe{
+          width: 108vw;height: 90vh;margin-top: -50px;
+      }
+       }
+       /* Medium devices (tablets, 768px and up) */
+       @media (min-width: 768px) {
+        iframe{
+          width: 108vw;height: 90vh;margin-top: -50px;
+      }
+       }
+       /* Large devices (desktops, 992px and up) */
+       @media (min-width: 992px) {
+        iframe{
+          width: 108vw;height: 90vh;margin-top: -50px;
+      }
+       }
+       /* X-Large devices (large desktops, 1200px and up) */
+       @media (min-width: 1200px) {
+        iframe{
+          width: 108vw;height: 90vh;margin-top: -50px;
+      }
+       }
+       /* XX-Large devices (larger desktops, 1400px and up) */
+       @media (min-width: 1400px) {
+        iframe{
+          width: 108vw!important;height: 119vh!important;
+      }
+       }
+    .side_padding1{
+    position: fixed;left: 0;background-color: #f7f7f8;z-index: 9999;padding: 25px;height: 400px;margin-top: 0px;
+    }
+</style>
 </head>
 
-<body style="margin:0px;padding:0px;overflow:hidden">
-    <iframe src="https://app.humata.ai/ask/folder/bfea1238-bb0a-4891-aa6c-dfc1c60cffbe?share_link=9e940548-fb54-4ffb-ab79-f1dc4ed9c172&selected-approach=Balanced" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:120%;width:111.8%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;margin-top:-55px;margin-right:-45px;margin-left:-15px;" height="100%" width="100%" target="iframe_a"></iframe>
+<body>
+    <div class="side_padding1"></div>
+    <iframe src="https://app.humata.ai/ask/folder/bfea1238-bb0a-4891-aa6c-dfc1c60cffbe?share_link=9e940548-fb54-4ffb-ab79-f1dc4ed9c172&selected-approach=Balanced" frameborder="0" target="iframe_a"></iframe>
 </body>
 
 
