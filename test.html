@@ -12,47 +12,44 @@
     <p id="result"></p>
 
     <script>
-        // Check if the browser supports the Web Speech API
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition Test</title>
+</head>
+<body>
+    <button id="start-btn">Start Listening</button>
+    <p id="result"></p>
 
-if ('SpeechRecognition' in window) {
-    const recognition = new SpeechRecognition();
-    const startBtn = document.getElementById('start-btn');
-    const stopBtn = document.getElementById('stop-btn');
-    const resultElement = document.getElementById('result');
+    <script>
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-    recognition.continuous = true; // Continue listening until stopped
-    recognition.interimResults = true; // Show interim results
+        if ('SpeechRecognition' in window) {
+            const recognition = new SpeechRecognition();
+            const startBtn = document.getElementById('start-btn');
+            const resultElement = document.getElementById('result');
 
-    // Start listening when the button is clicked
-    startBtn.addEventListener('click', () => {
-        recognition.start();
-        resultElement.textContent = 'Listening...';
-    });
+            startBtn.addEventListener('click', () => {
+                recognition.start();
+            });
 
-    // Stop listening when the button is clicked
-    stopBtn.addEventListener('click', () => {
-        recognition.stop();
-        resultElement.textContent = 'Stopped listening.';
-    });
+            recognition.addEventListener('result', (event) => {
+                let transcript = event.results[0][0].transcript;
+                resultElement.textContent = transcript;
+            });
 
-    // When the speech recognition service returns a result
-    recognition.addEventListener('result', (event) => {
-        let transcript = '';
-        for (let i = 0; i < event.results.length; i++) {
-            transcript += event.results[i][0].transcript;
+            recognition.addEventListener('error', (event) => {
+                console.error('Speech recognition error:', event.error);
+            });
+        } else {
+            alert("Sorry, your browser doesn't support the Web Speech API.");
         }
-        resultElement.textContent = transcript;
-    });
+    </script>
+</body>
+</html>
 
-    // Error handling
-    recognition.addEventListener('error', (event) => {
-        resultElement.textContent = `Error: ${event.error}`;
-    });
-} else {
-    // If the browser doesn't support the Web Speech API
-    alert("Sorry, your browser doesn't support the Web Speech API.");
-}
     </script>
 </body>
 </html>
